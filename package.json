@@ -1,0 +1,22 @@
+{
+  "name": "cold-chain-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "徽农优选冷链物流管理系统 Demo",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../web && npm install && cd ../mobile && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "dev:mobile": "cd mobile && npm run dev",
+    "dev": "concurrently -n server,web,mobile -c blue,green,orange \"npm run dev:server\" \"npm run dev:web\" \"npm run dev:mobile\"",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "playwright": "^1.59.1"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1",
+    "node-ssh": "^13.2.1"
+  }
+}
